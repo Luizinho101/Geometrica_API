@@ -1,0 +1,23 @@
+{
+  "name": "geometrica_api",
+  "version": "1.0.0",
+  "description": "Uma API REST serverless desenvolvida em Node.js e Express, hospedada na Vercel, projetada para automatizar cálculos matemáticos de figuras geométricas. A API fornece endpoints rápidos para calcular área, perímetro e volume de diversas formas bidimensionais e tridimensionais, como triângulos, quadrados, cubos e esferas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luizinho101/Geometrica_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luizinho101/Geometrica_API/issues"
+  },
+  "homepage": "https://github.com/Luizinho101/Geometrica_API#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
