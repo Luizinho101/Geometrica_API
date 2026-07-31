@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(express.static('public'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Olá, Mundo!' });
@@ -16,7 +18,6 @@ app.post('/api/area/quadrado', (req, res) => {
     resultado: areaQuadrado
   });
 });
-
 
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 3000;
