@@ -1,6 +1,15 @@
-POST https://geometrica-api-git-main-luiz-antonio-da-silvas-projects.vercel.app/api/area/quadrado
+POST https://geometrica-api.vercel.app/api/area/quadrado
 Content-Type: application/json
 
 {
     "lado": 2
+}
+
+###
+
+POST http://localhost:3000/api/area/quadrado
+Content-Type: application/json
+
+{
+    "lado": 3
 }
