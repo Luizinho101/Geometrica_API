@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação - API Geometrica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="content">
+
+    <section id="overview">
+      <h1>Documentação da API</h1>
+      <p>API REST para cálculos geométricos simples.</p>
+      <p><strong>Base URL:</strong> <code>http://localhost:3000</code></p>
+    </section>
+
+    <hr>
+
+    <section id="post-quadrado" class="endpoint">
+      <div class="endpoint-header">
+        <span class="badge post">POST</span>
+        <code>/api/area/quadrado</code>
+      </div>
+
+      <p class="description">Calcula a área de um quadrado a partir do valor do lado fornecido.</p>
+
+      <h3>Corpo da Requisição (Request Body)</h3>
+      <p>Envie um JSON com a propriedade <code>lado</code> (número positivo).</p>
+      <pre><code>{
+    "lado": 4
+}</code></pre>
+
+      <h3>Resposta de Sucesso (200 OK)</h3>
+      <pre><code>{
+  "area": 16
+}</code></pre>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
