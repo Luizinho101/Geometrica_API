@@ -1,37 +1,21 @@
 const express = require('express');
 const path = require('path');
+
+const areaRoutes = require('./routers/areaRouter');
+const helloRoutes = require('./routers/helloRouter');
+
 const app = express();
 
 app.use(express.json());
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Olá, Mundo!' });
-});
-
-app.post('/api/area/quadrado', (req, res) => {
-  const { lado } = req.body;
-
-  if (!lado || typeof lado !== 'number' || lado <= 0) {
-    return res.status(400).json({
-      error: "O campo 'lado' é obrigatório e deve ser um número positivo."
-    });
-  }
-
-  const areaQuadrado = lado * lado;
-
-  return res.status(200).json({
-    resultado: areaQuadrado
-  });
-});
-
+app.use('/api', helloRoutes);
+app.use('/api/area', areaRoutes);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 3000;
@@ -40,4 +24,6 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
+
 module.exports = app;
+
